@@ -18,7 +18,21 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ["Orbitron", "Roboto", "sans-serif"],
+				gaming: ["Orbitron", "monospace"]
+			},
 			colors: {
+				neon: {
+					green: "#00FF88",
+					purple: "#FF0080",
+					blue: "#0080FF"
+				},
+				gaming: {
+					dark: "#0A0A0F",
+					purple: "#8A2BE2",
+					accent: "#00FF88"
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +98,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'neon-pulse': {
+					'0%, 100%': { boxShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor' },
+					'50%': { boxShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor' }
+				},
+				'glow': {
+					from: { textShadow: '0 0 10px currentColor' },
+					to: { textShadow: '0 0 20px currentColor, 0 0 30px currentColor' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate'
 			}
 		}
 	},
